@@ -8,8 +8,14 @@ import "element-plus/dist/index.css";
 
 // msw
 async function enableMocking() {
-  const { worker } = await import("./mock/browser");
-  return worker.start();
+  const shouldEnableMocking =
+    !import.meta.env.production ||
+    new URLSearchParams(window.location.search).has("mock");
+
+  if (shouldEnableMocking) {
+    const { worker } = await import("./mock/browser");
+    await worker.start();
+  }
 }
 // msw
 const app = createApp(App);
