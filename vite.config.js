@@ -21,7 +21,7 @@ export default defineConfig({
   },
   // msw
   build: {
-    outDir: "dist",
+    outDir: "docs",
     assetsDir: "assets",
     emptyOutDir: true,
     chunkSizeWarningLimit: 1000, // 调整块大小警告限制(kB)
