@@ -10,7 +10,7 @@ const LoginRegisterView = () =>
 const CenterView = () => import("/src/views/my-center/MyCenter.vue");
 
 const routes = [
-  { path: "/home", component: HomeView },
+  { path: "/", component: HomeView },
   { path: "/login-register", component: LoginRegisterView },
   // {
   //   path: "/goods",
@@ -19,9 +19,8 @@ const routes = [
   // },
   { path: "/my-center", component: CenterView },
 ];
-
 const router = createRouter({
-  history: createWebHistory(import.meta.url.BASE_URL),
+  history: createWebHistory(),
   routes,
 });
 
